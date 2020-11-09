@@ -2,10 +2,6 @@ package kv
 
 import (
 	"../history"
-	"fmt"
-	"errors"
-	"io/ioutil"
-	"strings"
 )
 
 type DatabaseInterface interface {
@@ -14,7 +10,7 @@ type DatabaseInterface interface {
 }
 
 type Database struct {
-	state     KV //TODO: state DB
+	state     KV              //TODO: state DB
 	tempBlock history.History //TODO: history of transactions
 }
 
@@ -25,7 +21,7 @@ func (db Database) GetState(key string) (string, error) {
 	var err error
 
 	// TODO: Get the value of an input key and return error if it has
-	ret = 
+	// ret =
 
 	return ret, err
 }
@@ -33,7 +29,7 @@ func (db Database) GetState(key string) (string, error) {
 func (db *Database) PutState(key, value string) error {
 	var err error
 	// TODO: Put a key-value pair into state DB and return error if it has
-	KV[key] = value
+	// KV[key] = value
 
 	// TODO: Append history into temp block
 	//err = db.tempBlock.Append(key + "\t" + value)
@@ -41,7 +37,7 @@ func (db *Database) PutState(key, value string) error {
 	return err
 }
 
-func Init(obj *Database)  {
+func Init(obj *Database) {
 	obj.state = make(KV)
 
 	// TODO: Load state DB
